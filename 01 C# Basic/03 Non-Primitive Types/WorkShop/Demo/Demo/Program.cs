@@ -18,12 +18,11 @@ namespace Demo
             MakeOld(person);
             Console.WriteLine(person.Age);
         }
-
         public static void Increment(int number)
         {
             number += 10;
+            Console.WriteLine(number);
         }
-
         public static void MakeOld(Person person)
         {
             person.Age += 10;
