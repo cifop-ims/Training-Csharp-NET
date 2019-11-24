@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,9 @@ namespace StringLabs
     {
         static void Main(string[] args)
         {
-            int number = Convert.ToInt32(null);
+            string value = null;
+            int number = Convert.ToInt32(value);
+            // number2 = int.Parse(value);
             string fullName = "Ahmed Hedfi ";
             Console.WriteLine("Trim : '{0}'", fullName.Trim());
             Console.WriteLine("ToUpper : '{0}'", fullName.Trim().ToUpper());
@@ -19,12 +22,12 @@ namespace StringLabs
             string lastName = fullName.Substring(index + 1);
             Console.WriteLine("firstName : '{0}'", firstName);
             Console.WriteLine("lastName : '{0}'", lastName);
-            Console.WriteLine(fullName.Replace("ahmed", "hello"));
+            Console.WriteLine(fullName.Replace("Ahmed", "hello"));
             if (String.IsNullOrEmpty(null))
                 Console.WriteLine("Invalid");
             string str = "100";
             decimal ammount = Convert.ToDecimal(str);
-            ammount.ToString("C");
+            ammount.ToString("C",new CultureInfo("de"));
         }
     }
 }

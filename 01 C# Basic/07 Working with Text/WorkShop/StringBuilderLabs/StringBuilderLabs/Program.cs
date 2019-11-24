@@ -18,7 +18,7 @@ namespace StringBuilderLabs
             builder.AppendLine("just demo3");
             builder.Append('-', 10);
             Console.WriteLine(builder.ToString());
-            StringBuilder star = new StringBuilder("*");
+            var star = new StringBuilder("*");
             for (int i = 0; i < 1000; i++)
             {
                 star.Append("*");

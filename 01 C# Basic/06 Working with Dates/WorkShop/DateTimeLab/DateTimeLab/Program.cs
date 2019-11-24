@@ -11,7 +11,7 @@ namespace DateTimeLab
     {
         static void Main(string[] args)
         {
-            var demoDate = new DateTime(2019, 08, 18);
+            var demoDate = new DateTime(2019, 11, 24);
             var now = DateTime.Now;
             var today = DateTime.Today;
             Console.WriteLine("Hour :" + now.Hour);

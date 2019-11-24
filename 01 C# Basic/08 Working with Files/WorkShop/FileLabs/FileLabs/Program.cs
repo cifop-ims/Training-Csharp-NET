@@ -12,6 +12,7 @@ namespace FileLabs
         static void Main(string[] args)
         {
             var path = @"c:\demo\path.txt";
+            var pathForInstanceMethod = @"c:\demo\pathForInstanceMethod.txt";
             // static method
             File.Copy(@"c:\demo\path.txt", @"c:\demo\path2.txt", true);
             if (File.Exists(path))
@@ -23,7 +24,7 @@ namespace FileLabs
             File.Delete(path);
 
             // instance methods
-            var fileinfo = new FileInfo(path);
+            var fileinfo = new FileInfo(pathForInstanceMethod);
             fileinfo.CopyTo(@"c:\demo\path2.txt", true);
 
             if (fileinfo.Exists)
