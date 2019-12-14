@@ -36,6 +36,12 @@ namespace PropertiesLabs
             }
         }
 
-        public string Nationality { get; set; }
+        public string Nationality { get; private set; }
+
+        void SetNationality(string value)
+        {
+            Nationality = value;
+            //Age = 10;
+        }
     }
 }

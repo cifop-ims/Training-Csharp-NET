@@ -1,11 +1,13 @@
-Exercise 1: Design a database connection
+﻿Exercise 1: Design a database connection
 
 To access a database, we need to open a connection to it ﬁrst and close it once our job is done. 
 Connecting to a database depends on the type of the target database and the database management 
 system (DBMS). For example, connecting to a SQL Server database is different from connecting to 
 an Oracle database. But both these connections have a few things in common: 
-• They have a connection string • They can be opened 
-• They can be closed • They may have a timeout attribute (so if the connection could not be opened within the timeout, 
+• They have a connection string 
+• They can be opened 
+• They can be closed 
+• They may have a timeout attribute (so if the connection could not be opened within the timeout, 
 an exception will be thrown). Your job is to represent these commonalities in a base class called DbConnection. 
 This class should have two properties: ConnectionString : string Timeout : TimeSpan A DbConnection will not be in a valid state
 if it doesn’t have a connection string. So you need to pass a connection string in the constructor of this class. 
