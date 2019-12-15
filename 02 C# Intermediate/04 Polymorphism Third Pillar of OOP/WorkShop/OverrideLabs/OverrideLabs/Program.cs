@@ -9,6 +9,7 @@ namespace OverrideLabs
     {
         static void Main(string[] args)
         {
+            object
             var shape = new Shape();
             DoDraw(shape);
             var circle = new Circle();
