@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EE50A180-3C66-48FF-ABB7-47402BB0F2CE}</ProjectGuid>
+    <ProjectGuid>{41C3E6EB-64CB-45E0-AA16-B1092E20C567}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>GenericLabs</RootNamespace>
-    <AssemblyName>GenericLabs</AssemblyName>
+    <RootNamespace>SingletonLab</RootNamespace>
+    <AssemblyName>SingletonLab</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,11 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Employee.cs" />
-    <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Test.cs" />
+    <Compile Include="Singleton.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

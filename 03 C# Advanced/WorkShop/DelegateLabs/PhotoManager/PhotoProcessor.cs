@@ -1,16 +1,21 @@
-﻿namespace PhotoManager
+﻿using System;
+
+namespace PhotoManager
 {
     public class PhotoProcessor
     {
-        public void Process(string path)
+        public string Sample(int a)
         {
+            return a.ToString();
+        }
+        public void Process(string path, Action<Photo> handler)
+        {
+            //Func<int, string> func = Sample;
+            //func(5);
             var photo = Photo.Load(path);
-            
-            var photoFilters = new PhotoFilters();
-            photoFilters.ApplyBrightness(photo);
-            photoFilters.ApplyContrast(photo);
-            photoFilters.Resize(photo);
-            
+
+            handler(photo);
+
             photo.Save();
         }
     }

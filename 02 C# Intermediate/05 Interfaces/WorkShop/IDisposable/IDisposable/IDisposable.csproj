@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EE50A180-3C66-48FF-ABB7-47402BB0F2CE}</ProjectGuid>
+    <ProjectGuid>{C3DAF26A-A29E-4F4F-BFC0-9B849821F670}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>GenericLabs</RootNamespace>
-    <AssemblyName>GenericLabs</AssemblyName>
+    <RootNamespace>IDisposableLabs</RootNamespace>
+    <AssemblyName>IDisposableLabs</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,11 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Employee.cs" />
-    <Compile Include="Person.cs" />
+    <Compile Include="Container.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

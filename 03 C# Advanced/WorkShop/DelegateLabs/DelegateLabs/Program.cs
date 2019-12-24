@@ -9,10 +9,21 @@ namespace DelegateLabs
 {
     class Program
     {
+        static void CustomFilter(Photo photo)
+        {
+            Console.WriteLine("Custom filter was applied");
+        }
         static void Main(string[] args)
         {
             var processor = new PhotoProcessor();
-            processor.Process("photo.jpeg");
+            var photoFilters = new PhotoFilters();
+
+            Action<Photo> handler = photoFilters.ApplyBrightness;
+            handler += photoFilters.ApplyContrast;
+            handler += photoFilters.Resize;
+            handler += CustomFilter;
+
+            processor.Process("photo.jpeg", handler);
         }
     }
 }
