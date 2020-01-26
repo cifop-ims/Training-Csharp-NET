@@ -1,13 +1,10 @@
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity.Spatial;
 
-namespace CodeFirstFromExistingDB
+namespace DataAnotations
 {
-    [Table("Courses")]
-    public partial class Course
+    public class Course
     {
         public Course()
         {
@@ -16,19 +13,20 @@ namespace CodeFirstFromExistingDB
 
         public int Id { get; set; }
 
+        [Required]
         public string Name { get; set; }
        
         [Required]
+        [MaxLength(255)]
         public string Description { get; set; }
-
-        public DateTime? Date { get; set; }
-
+        
         public int Level { get; set; }
 
-        public int? Author_Id { get; set; }
+        [ForeignKey("Author")]
+        public int AuthorId { get; set; }
 
+        //[ForeignKey("AuthorId")]
         public virtual Author Author { get; set; }
         public virtual ICollection<Tag> Tags { get; set; }
-
     }
 }

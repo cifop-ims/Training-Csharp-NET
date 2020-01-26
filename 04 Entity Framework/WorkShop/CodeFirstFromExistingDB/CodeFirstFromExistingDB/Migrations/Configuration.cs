@@ -18,6 +18,24 @@ namespace CodeFirstFromExistingDB.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
+
+            context.Courses.AddOrUpdate(e => e.Id,
+                new Course
+                {
+                    Id = 4,
+                    Name = "C#.NET",
+                    Date = new DateTime(2009, 01, 03),
+                    Description ="Training"
+                  
+                },
+                 new Course
+                 {
+                     Id = 5,
+                     Name = "EF",
+                     Date = new DateTime(2009, 01, 05),
+                     Description = "Training"
+                 }
+                );
         }
     }
 }

@@ -13,10 +13,10 @@ namespace Queries.Persistence.Repositories
 
         public Author GetAuthorWithCourses(int id)
         {
-            return PlutoContext.Authors.Include(a => a.Courses).SingleOrDefault(a => a.Id == id);
+            return Container.Authors.Include(a => a.Courses).SingleOrDefault(a => a.Id == id);
         }
 
-        public AppDbContext PlutoContext
+        public AppDbContext Container
         {
             get { return Context as AppDbContext; }
         }

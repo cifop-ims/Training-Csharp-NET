@@ -18,6 +18,10 @@ namespace CodeFirstFromExistingDB
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Course>()
+                .Property(c => c.Name)
+                .IsRequired();
+
             modelBuilder.Entity<Author>()
                 .HasMany(e => e.Courses)
                 .WithOptional(e => e.Author)

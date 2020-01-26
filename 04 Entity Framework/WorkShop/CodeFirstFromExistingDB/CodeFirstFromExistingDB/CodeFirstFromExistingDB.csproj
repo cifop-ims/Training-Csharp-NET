@@ -84,6 +84,14 @@
     <Compile Include="Migrations\202001051216353_DropCategoriesTable.Designer.cs">
       <DependentUpon>202001051216353_DropCategoriesTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001251335318_MakeDescriptionColumnInCourseTableNotNullable.cs" />
+    <Compile Include="Migrations\202001251335318_MakeDescriptionColumnInCourseTableNotNullable.Designer.cs">
+      <DependentUpon>202001251335318_MakeDescriptionColumnInCourseTableNotNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001251344567_MakeNameColumnInCousesTableNotNullable.cs" />
+    <Compile Include="Migrations\202001251344567_MakeNameColumnInCousesTableNotNullable.Designer.cs">
+      <DependentUpon>202001251344567_MakeNameColumnInCousesTableNotNullable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -114,6 +122,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001051216353_DropCategoriesTable.resx">
       <DependentUpon>202001051216353_DropCategoriesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001251335318_MakeDescriptionColumnInCourseTableNotNullable.resx">
+      <DependentUpon>202001251335318_MakeDescriptionColumnInCourseTableNotNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001251344567_MakeNameColumnInCousesTableNotNullable.resx">
+      <DependentUpon>202001251344567_MakeNameColumnInCousesTableNotNullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

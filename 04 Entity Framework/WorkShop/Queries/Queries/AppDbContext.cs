@@ -1,15 +1,14 @@
-using Queries.Core.Domain;
-using Queries.Persistence.EntityConfigurations;
 using System.Data.Entity;
+using Queries.EntityConfigurations;
 
-namespace Queries.Persistence
+namespace Queries
 {
     public class AppDbContext : DbContext
     {
         public AppDbContext()
             : base("name=DefaultConnection")
         {
-            this.Configuration.LazyLoadingEnabled = false;
+            Configuration.LazyLoadingEnabled = false;
         }
 
         public virtual DbSet<Author> Authors { get; set; }

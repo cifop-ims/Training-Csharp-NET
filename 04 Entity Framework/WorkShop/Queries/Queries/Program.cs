@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Data.Entity;
+using System.Linq;
 
 namespace Queries
 {
@@ -10,11 +11,19 @@ namespace Queries
             var context = new AppDbContext();
 
             //Restriction
-            //var query00 =
-            //    from c in context.Courses
-            //    where c.Author.Id == 1
-            //    select c;
+            var query00 =
+                from c in context.Courses
+                where c.Author.Id == 1
+                c;
 
+            var result = query00.Include).Where(c => c.Name.Contains("c")).ToList();
+
+
+
+            foreach (var cours in query00)
+            {
+                System.Console.WriteLine(cours.Name);
+            }
             //Ordering
             //var query01 =
             //  from c in context.Courses
@@ -48,8 +57,8 @@ namespace Queries
             //Join
             //var query04 =
             //    from c in context.Courses
-            //    join a in context.Authors on c.AuthorId equals a.Id
-            //    select new { Name = c.Name, AuthorName = a.Name };
+            //    //join a in context.Authors on c.AuthorId equals a.Id
+            //    select new { Name = c.Name, AuthorName = c.Author.Name };
 
             //Group Join
             //var query05 =
@@ -71,12 +80,12 @@ namespace Queries
             //    .Where(c => c.Level == 1)
             //    .OrderBy(c => c.Level)
             //    .ThenByDescending(c => c.Name)
-            //    .Select(c=>new { Name = c.Name, AuthorName = c.Author.Name });
+            //    .Select(c => new { Name = c.Name, AuthorName = c.Author.Name });
             //var courses = context.Courses
             //   .Where(c => c.Level == 1)
             //   .OrderBy(c => c.Level)
             //   .ThenByDescending(c => c.Name)
-            ////   .SelectMany(c => c.Tags);
+            //  .Select(c => c.Tags).ToList();
             //var groups = context.Courses.GroupBy(c => c.Level);
             //var join = context.Courses.Join(context.Authors,
             //    c => c.AuthorId,
@@ -89,15 +98,15 @@ namespace Queries
             //var crossJoin = context.Authors.SelectMany(c => c.Courses,
             //    (author, course) => new { AuthorName = author.Name, CourseName = course.Name });
             //Additional Methods
-            //var page = context.Courses.Skip(2).Take(5);
-            //var element = context.Courses.OrderBy(c => c.Level).FirstOrDefault(c => c.Level == 1);
-            //var istrue = context.Courses.All(c => c.FullPrice > 10);
-            //istrue = context.Courses.Any(c => c.Level == 1);
-            //var count = context.Courses.Count();
-            //var max = context.Courses.Max(c => c.FullPrice);
-            var course = context.Courses.Single(c => c.Name == "Name 2");
-            context.Courses.Remove(course);
-            context.SaveChanges();
+            var page = context.Courses.Skip(2).Take(5);
+            var element = context.Courses.OrderBy(c => c.Level).FirstOrDefault(c => c.Level == 1);
+            var istrue = context.Courses.All(c => c.FullPrice > 10);
+            istrue = context.Courses.Any(c => c.Level == 1);
+            var count = context.Courses.Count();
+            var max = context.Courses.Max(c => c.FullPrice);
+            //var course = context.Courses.Single(c => c.Name == "Name 2");
+            //context.Courses.Remove(course);
+            //context.SaveChanges();
 
             context.Dispose();
         }
